@@ -4,14 +4,17 @@ import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
 import './App.css';
 import { DISHES } from './shared/dishes';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
 
   render() {
   return (
-    <div>
-    <Main />
-    </div>
+    <BrowserRouter>
+      <div>
+      <Main />
+      </div>
+    </BrowserRouter>
   );
   }
 }

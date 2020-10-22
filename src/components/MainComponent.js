@@ -9,6 +9,7 @@ import DishDetail from './DishdetailComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
@@ -46,10 +47,12 @@ class Main extends Component {
     <div>
       <Header /> 
         <Switch>
-        <Route path='/home' component={HomePage} />
+              <Route path='/home' component={HomePage} />
+              <Route exact path='/aboutus' component={() => <About leaders={this.state.leaders} />}  />
               <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
               <Route path='/menu/:dishId' component={DishWithId} />
               <Route exact path='/contactus' component={Contact}  />
+              
               <Redirect to="/home" />
         </Switch>
       <Footer />
